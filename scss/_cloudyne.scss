@@ -1,0 +1,57 @@
+#cloudyne {
+  #cloudyne-wrapper {
+    row-gap: 20px;
+    column-gap: 60px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-left: 3em;
+    white-space: nowrap;
+  }
+  div {
+    span {
+      &:first-of-type {
+        position: absolute;
+        opacity: 0.5;
+        font-size: 49px;
+        top: -15px;
+        left: 15px;
+      }
+    }
+  }
+  .cloud-project {
+    position: relative;
+    flex: 1 1 500px;
+  }
+  .cloud-project-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .cloud-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0a0d12 100%);
+  }
+  #cloudyne-roles {
+    gap: 20px;
+  }
+  .role {
+    flex: 1 1 350px;
+    span {
+      &:first-of-type {
+        top: -10px;
+        left: auto;
+      }
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+}

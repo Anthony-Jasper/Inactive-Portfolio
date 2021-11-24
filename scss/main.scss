@@ -1,0 +1,95 @@
+@import "variables";
+
+@import "reset", "header", "about", "experience", "cloudyne", "contact",
+  "coding", "design";
+
+* {
+  font-family: "OpenSans";
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("/font/OpenSans-Regular.ttf");
+}
+
+html {
+  background-color: $main-background;
+  overflow-x: hidden;
+}
+html.overlayActive {
+  overflow: hidden;
+}
+p {
+  color: $light-grey;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+span,
+a,
+a:visited,
+a:focus,
+a:target {
+  color: $blue;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px;
+  font-variant: small-caps;
+  letter-spacing: 6px;
+  color: $medium-grey;
+  font-weight: 500;
+}
+
+#about,
+#cloudyne {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(72, 198, 239, 0.1) 100%
+  );
+}
+
+#experience,
+#contact {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(72, 198, 239, 0.1) 100%
+  );
+}
+
+#about-wrapper,
+#experience-wrapper,
+#cloudyne-wrapper,
+#cloudyne-roles,
+#contact-wrapper {
+  margin: 0 auto;
+  padding: 75px 0;
+  width: 75%;
+}
+
+#experience-wrapper,
+#cloudyne-wrapper,
+#cloudyne-roles,
+#contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sec-sub {
+  font-size: 13px;
+  font-variant: small-caps;
+  position: relative;
+  top: -10px;
+  margin-left: 5.7em;
+}
+
+.role {
+  background: rgba(70, 113, 128, 0.05);
+  padding: 15px 30px;
+  position: relative;
+}

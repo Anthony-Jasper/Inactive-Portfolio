@@ -1,0 +1,102 @@
+.tab {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 65px;
+  button {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    background-color: inherit;
+    font-size: 24px;
+    color: $light-grey;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    &:hover {
+      .brackets {
+        opacity: 1;
+      }
+    }
+    .brackets {
+      font-size: 48px;
+      opacity: 0.5;
+    }
+    div {
+      margin: 0 auto;
+      P {
+        position: relative;
+        top: 14px;
+      }
+      span {
+        font-size: 13px;
+        position: relative;
+        top: -5px;
+      }
+    }
+  }
+}
+.tabcontent {
+  display: none;
+  h2 {
+    color: $light-grey;
+    letter-spacing: 1px;
+    margin: 7px 0;
+  }
+  li {
+    opacity: 0.7;
+    letter-spacing: 1px;
+  }
+  label,
+  li {
+    color: $light-grey;
+    opacity: 0.7;
+  }
+  meter {
+    margin-left: 20px;
+    float: right;
+  }
+  meter::-webkit-meter-bar {
+    background: none;
+    box-shadow: 0 5px 5px -5px #333 inset;
+    border-radius: 0;
+    height: 15px;
+    width: 150px;
+  }
+  meter::-webkit-meter-optimum-value {
+    box-shadow: 0 5px 5px -5px #999 inset;
+    background-color: $blue;
+    background-size: 100% 100%;
+  }
+  #knowledgeWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  ul {
+    padding-inline-start: 20px;
+    margin-top: 0;
+    ::marker {
+      color: $blue;
+    }
+  }
+  #entertainmentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .outgoingLinks {
+    padding-right: 10px;
+    color: $blue;
+  }
+}
