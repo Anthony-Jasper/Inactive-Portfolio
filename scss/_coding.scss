@@ -8,6 +8,8 @@
   background-color: $main-background;
   overflow-x: auto;
   padding: 5px 10px;
+  animation: slideRight 0.5s ease-out 0s forwards;
+
   #close-coding {
     cursor: pointer;
     font-variant: small-caps;
