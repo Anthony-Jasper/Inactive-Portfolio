@@ -36,7 +36,7 @@ a:target {
 h2 {
   font-size: 24px;
   font-variant: small-caps;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
   color: $medium-grey;
   font-weight: 500;
 }
@@ -68,7 +68,7 @@ h2 {
 #contact-wrapper {
   margin: 0 auto;
   padding: 75px 0;
-  width: 75%;
+  width: 95%;
 }
 
 #experience-wrapper,
@@ -84,13 +84,14 @@ h2 {
   font-size: 13px;
   font-variant: small-caps;
   position: relative;
-  top: -10px;
-  margin-left: 5.7em;
+  margin-left: 4.2em;
+  position: relative;
+  top: -7px;
 }
 
 .role {
   background: rgba(70, 113, 128, 0.05);
-  padding: 15px 30px;
+  padding: 15px 15px;
   position: relative;
 }
 
@@ -109,5 +110,26 @@ h2 {
   }
   to {
     transform: translateX(0%);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #about-wrapper,
+  #experience-wrapper,
+  #cloudyne-wrapper,
+  #cloudyne-roles,
+  #contact-wrapper {
+    margin: 0 auto;
+    padding: 75px 0;
+    width: 75%;
+  }
+  .role {
+    padding: 15px 30px;
+  }
+  h2 {
+    letter-spacing: 6px;
+  }
+  .sec-sub {
+    margin-left: 5.7em;
   }
 }

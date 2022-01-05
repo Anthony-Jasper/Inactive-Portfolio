@@ -79,13 +79,13 @@ select {
 header {
   position: relative;
   height: 100vh;
-  margin: 0px 30px;
+  margin: 0px;
 }
 
 header #social-wrapper {
   position: absolute;
   top: 15px;
-  left: 0;
+  left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,15 +121,17 @@ header #job-titles {
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: 15px;
+  bottom: 30px;
   right: 0;
+  text-align: center;
+  left: 0;
 }
 
 header #job-titles li {
   display: inline-block;
   text-transform: capitalize;
   font-variant: small-caps;
-  font-size: 24px;
+  font-size: 18px;
   color: rgba(200, 205, 208, 0.5);
   letter-spacing: 1px;
 }
@@ -150,9 +152,9 @@ header #job-titles li:nth-of-type(3) {
 
 header #heading {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
+  top: 40%;
+  -webkit-transform: translateY(-40%) translateX(-50%);
+          transform: translateY(-40%) translateX(-50%);
   left: 50%;
   font-variant: small-caps;
   display: -webkit-box;
@@ -162,11 +164,14 @@ header #heading {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header #heading > div {
@@ -176,6 +181,7 @@ header #heading > div {
 }
 
 header #heading .brackets {
+  display: none;
   position: absolute;
   font-size: 122px;
 }
@@ -189,22 +195,23 @@ header #heading .brackets:last-of-type {
 }
 
 header #heading h1 {
-  font-size: 72px;
-  letter-spacing: 6px;
+  font-size: 36px;
+  letter-spacing: 3px;
   text-align: center;
   color: rgba(200, 205, 208, 0.8);
 }
 
 header #heading h2 {
-  font-size: 20px;
+  font-size: 13px;
   text-align: center;
   line-height: 0.5;
+  letter-spacing: 3px;
 }
 
 header #heading p {
   position: relative;
   color: #c8cdd0;
-  font-size: 32px;
+  font-size: 24px;
   letter-spacing: 6px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -213,13 +220,21 @@ header #heading p {
 }
 
 header #heading p:first-of-type {
-  left: -6em;
   color: #48c6ef;
+  margin-right: auto;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  top: 4em;
 }
 
 header #heading p:last-of-type {
-  right: -6em;
   color: #48c6ef;
+  margin-left: auto;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  top: 4em;
 }
 
 header #heading p:hover {
@@ -229,21 +244,17 @@ header #heading p:hover {
 
 header #game-menu {
   padding-top: 20px;
+  padding-right: 25px;
   float: right;
-  text-align: center;
+  text-align: right;
 }
 
 header #game-menu a {
-  display: inline-block;
+  display: block;
   text-transform: capitalize;
   font-variant: small-caps;
   font-size: 16px;
   letter-spacing: 1px;
-}
-
-header #game-menu a:first-of-type {
-  padding-right: 10px;
-  border-right: 1px solid #415058;
 }
 
 header #game-menu a:last-of-type {
@@ -254,17 +265,96 @@ header #game-menu p {
   font-variant: small-caps;
 }
 
+@media screen and (min-width: 425px) {
+  header #heading h1 {
+    font-size: 52px;
+    letter-spacing: 6px;
+  }
+  header #heading h2 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header #job-titles {
+    bottom: 15px;
+    left: auto;
+    right: 15px;
+  }
+  header #job-titles li {
+    font-size: 24px;
+  }
+  header h1 {
+    font-size: 56px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header #heading {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  header #heading p:first-of-type {
+    left: -6em;
+    -webkit-box-ordinal-group: inherit;
+        -ms-flex-order: inherit;
+            order: inherit;
+    top: 0em;
+  }
+  header #heading p:last-of-type {
+    right: -6em;
+    -webkit-box-ordinal-group: inherit;
+        -ms-flex-order: inherit;
+            order: inherit;
+    top: 0em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header {
+    margin: 0px 30px;
+  }
+  header #social-wrapper {
+    left: 0px;
+  }
+  header #game-menu {
+    text-align: center;
+  }
+  header #game-menu a {
+    display: inline-block;
+  }
+  header #game-menu a:first-of-type {
+    padding-right: 10px;
+    border-right: 1px solid #415058;
+  }
+  header #heading {
+    top: 50%;
+  }
+  header #heading h1 {
+    font-size: 72px;
+  }
+  header #heading h2 {
+    font-size: 24px;
+  }
+  header #heading p {
+    font-size: 32px;
+  }
+  header #heading .brackets {
+    display: block;
+  }
+}
+
 .tab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-line-pack: center;
       align-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   margin-bottom: 65px;
 }
@@ -352,7 +442,7 @@ header #game-menu p {
           box-shadow: 0 5px 5px -5px #333 inset;
   border-radius: 0;
   height: 15px;
-  width: 150px;
+  width: 75px;
 }
 
 .tabcontent meter::-webkit-meter-optimum-value {
@@ -366,8 +456,8 @@ header #game-menu p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: space-evenly;
@@ -376,6 +466,10 @@ header #game-menu p {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+}
+
+.tabcontent #knowledgeWrapper div {
+  width: 320px;
 }
 
 .tabcontent ul {
@@ -404,6 +498,23 @@ header #game-menu p {
   color: #48c6ef;
 }
 
+@media screen and (min-width: 1440px) {
+  .tab {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .tabcontent #knowledgeWrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  meter::-webkit-meter-bar {
+    width: 150px;
+  }
+}
+
 #experience #experience-wrapper {
   row-gap: 20px;
   -webkit-column-gap: 60px;
@@ -429,6 +540,9 @@ header #game-menu p {
 }
 
 #cloudyne #cloudyne-wrapper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   row-gap: 20px;
   -webkit-column-gap: 60px;
           column-gap: 60px;
@@ -439,23 +553,23 @@ header #game-menu p {
 }
 
 #cloudyne h2 {
+  font-size: 18px;
   margin-left: 3em;
-  white-space: nowrap;
+  position: relative;
+  top: 5px;
 }
 
 #cloudyne div span:first-of-type {
   position: absolute;
   opacity: 0.5;
-  font-size: 49px;
-  top: -15px;
   left: 15px;
+  font-size: 28px;
+  top: 0px;
 }
 
 #cloudyne .cloud-project {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 500px;
-          flex: 1 1 500px;
+  width: 500px;
 }
 
 #cloudyne .cloud-project-container {
@@ -486,7 +600,7 @@ header #game-menu p {
 }
 
 #cloudyne .role span:first-of-type {
-  top: -10px;
+  top: 10px;
   left: auto;
 }
 
@@ -494,9 +608,31 @@ header #game-menu p {
   margin-top: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  #cloudyne-wrapper {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #cloudyne div span:first-of-type {
+    font-size: 49px;
+    top: -15px;
+  }
+  #cloudyne h2 {
+    font-size: 22px;
+    white-space: nowrap;
+  }
+  #cloudyne .role span:first-of-type {
+    top: -10px;
+  }
+}
+
 #contact #contact-wrapper {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -507,8 +643,8 @@ header #game-menu p {
 }
 
 #contact img {
-  width: 30%;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
@@ -518,8 +654,18 @@ header #game-menu p {
   text-decoration: none;
 }
 
-#contact div {
-  padding-left: 30px;
+@media screen and (min-width: 768px) {
+  #contact #contact-wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  #contact img {
+    width: 200px;
+    height: 200px;
+  }
+  div {
+    padding-left: 30px;
+  }
 }
 
 #coding {
@@ -750,7 +896,7 @@ a:target {
 h2 {
   font-size: 24px;
   font-variant: small-caps;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
   color: #c8cdd0;
   font-weight: 500;
 }
@@ -776,7 +922,7 @@ h2 {
 #contact-wrapper {
   margin: 0 auto;
   padding: 75px 0;
-  width: 75%;
+  width: 95%;
 }
 
 #experience-wrapper,
@@ -797,13 +943,14 @@ h2 {
   font-size: 13px;
   font-variant: small-caps;
   position: relative;
-  top: -10px;
-  margin-left: 5.7em;
+  margin-left: 4.2em;
+  position: relative;
+  top: -7px;
 }
 
 .role {
   background: rgba(70, 113, 128, 0.05);
-  padding: 15px 30px;
+  padding: 15px 15px;
   position: relative;
 }
 
@@ -848,6 +995,27 @@ h2 {
   to {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #about-wrapper,
+  #experience-wrapper,
+  #cloudyne-wrapper,
+  #cloudyne-roles,
+  #contact-wrapper {
+    margin: 0 auto;
+    padding: 75px 0;
+    width: 75%;
+  }
+  .role {
+    padding: 15px 30px;
+  }
+  h2 {
+    letter-spacing: 6px;
+  }
+  .sec-sub {
+    margin-left: 5.7em;
   }
 }
 /*# sourceMappingURL=main.css.map */

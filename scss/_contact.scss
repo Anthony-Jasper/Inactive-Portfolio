@@ -1,20 +1,30 @@
 #contact {
   #contact-wrapper {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
   }
   p {
     margin-bottom: 20px;
   }
   img {
-    width: 30%;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
   }
   a {
     display: block;
     margin-bottom: 20px;
     text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #contact #contact-wrapper {
+    flex-wrap: nowrap;
+  }
+  #contact img {
+    width: 200px;
+    height: 200px;
   }
   div {
     padding-left: 30px;

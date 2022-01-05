@@ -1,12 +1,11 @@
 header {
   position: relative;
   height: 100vh;
-  margin: 0px 30px;
-
+  margin: 0px;
   #social-wrapper {
     position: absolute;
     top: 15px;
-    left: 0;
+    left: 15px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -29,13 +28,15 @@ header {
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 15px;
+    bottom: 30px;
     right: 0;
+    text-align: center;
+    left: 0;
     li {
       display: inline-block;
       text-transform: capitalize;
       font-variant: small-caps;
-      font-size: 24px;
+      font-size: 18px;
       color: rgba(200, 205, 208, 0.5);
       letter-spacing: 1px;
       &:nth-of-type(1) {
@@ -53,19 +54,21 @@ header {
   }
   #heading {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    top: 40%;
+    transform: translateY(-40%) translateX(-50%);
     left: 50%;
     font-variant: small-caps;
 
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     > div {
       width: max-content;
     }
     .brackets {
+      display: none;
       position: absolute;
       font-size: 122px;
       &:first-of-type {
@@ -76,30 +79,35 @@ header {
       }
     }
     h1 {
-      font-size: 72px;
-      letter-spacing: 6px;
+      font-size: 36px;
+      letter-spacing: 3px;
       text-align: center;
       color: rgba(200, 205, 208, 0.8);
     }
     h2 {
-      font-size: 20px;
+      font-size: 13px;
       text-align: center;
       line-height: 0.5;
+      letter-spacing: 3px;
     }
     p {
       position: relative;
       color: $medium-grey;
-      font-size: 32px;
+      font-size: 24px;
       letter-spacing: 6px;
       width: max-content;
       cursor: pointer;
       &:first-of-type {
-        left: -6em;
         color: $blue;
+        margin-right: auto;
+        order: 2;
+        top: 4em;
       }
       &:last-of-type {
-        right: -6em;
         color: $blue;
+        margin-left: auto;
+        order: 3;
+        top: 4em;
       }
       &:hover {
         color: $blue;
@@ -109,24 +117,107 @@ header {
   }
   #game-menu {
     padding-top: 20px;
+    padding-right: 25px;
     float: right;
-    text-align: center;
+    text-align: right;
+
     a {
-      display: inline-block;
+      display: block;
       text-transform: capitalize;
       font-variant: small-caps;
       font-size: 16px;
       letter-spacing: 1px;
-      &:first-of-type {
-        padding-right: 10px;
-        border-right: 1px solid $dark-grey;
-      }
       &:last-of-type {
         padding-left: 10px;
       }
     }
     p {
       font-variant: small-caps;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  header {
+    #heading {
+      h1 {
+        font-size: 52px;
+        letter-spacing: 6px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    #job-titles {
+      bottom: 15px;
+      left: auto;
+      right: 15px;
+      li {
+        font-size: 24px;
+      }
+    }
+    h1 {
+      font-size: 56px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    #heading {
+      flex-wrap: nowrap;
+      p {
+        &:first-of-type {
+          left: -6em;
+          order: inherit;
+          top: 0em;
+        }
+        &:last-of-type {
+          right: -6em;
+          order: inherit;
+          top: 0em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header {
+    margin: 0px 30px;
+    #social-wrapper {
+      left: 0px;
+    }
+    #game-menu {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        &:first-of-type {
+          padding-right: 10px;
+          border-right: 1px solid $dark-grey;
+        }
+      }
+    }
+    #heading {
+      top: 50%;
+      h1 {
+        font-size: 72px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 32px;
+      }
+      .brackets {
+        display: block;
+      }
     }
   }
 }
