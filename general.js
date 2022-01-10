@@ -94,3 +94,12 @@ for(let i = 0; i < navItems.length; i++){
 		designItems[i].classList.add("activeDesign");
 	});
 }
+
+document.getElementById("mobileMenu").addEventListener("click", function(){ 
+
+	if(document.querySelector(".openMenu")){
+		document.getElementById("design-sidebar").classList.remove("openMenu");
+	}else{
+	document.getElementById("design-sidebar").className += "openMenu";
+	}
+});

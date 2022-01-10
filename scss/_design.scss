@@ -7,7 +7,7 @@
   top: 0;
   background-color: $main-background;
   overflow-x: hidden;
-  padding: 5px 10px 5px 0px;
+  padding: 5px 0px;
   animation: slideLeft 0.5s ease-out 0s forwards;
   #close-design {
     cursor: pointer;
@@ -16,35 +16,40 @@
   }
   #design-wrapper {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
   }
-  /* #back2top {
-    color: white;
+  #mobileMenu {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
     background: rgba(70, 113, 128, 0.05);
-    position: fixed;
-    border-radius: 50%;
-    bottom: 15px;
-    right: 15px;
-    height: 45px;
-    width: 45px;
+    font-variant: small-caps;
+    padding-bottom: 5px;
+    cursor: pointer;
     span {
-      position: absolute;
-      font-size: 26px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      top: 0;
-      bottom: 0;
+      display: block;
+      width: 30px;
+      height: 1px;
+      border: 1px solid $blue;
+      margin: 2px auto;
     }
-  } */
+  }
   #design-sidebar {
+    position: absolute;
     color: $medium-grey;
-    width: fit-content;
-    padding: 20px 30px;
-    background: rgba(70, 113, 128, 0.05);
+    width: 100%;
+    padding: 20px 30px 40px 30px;
+    background: rgb(13, 18, 24);
     height: fit-content;
+    z-index: 20;
+    transform: translateY(-98%);
+    &.openMenu {
+      animation: showMenu 0.5s ease-out 0s forwards;
+    }
     ul {
       list-style: none;
 
@@ -70,7 +75,7 @@
   }
   #design-content {
     width: fit-content;
-    padding: 0 8em;
+    padding: 3em 0.5em;
     h2 {
       font-size: 46px;
     }
@@ -103,5 +108,31 @@
     &.activeDesign {
       display: block;
     }
+  }
+}
+
+@keyframes showMenu {
+  from {
+    transform: translateY(-98%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #design #design-wrapper {
+    flex-wrap: nowrap;
+  }
+  #design #design-sidebar {
+    position: relative;
+    width: fit-content;
+    transform: translateY(0%);
+  }
+  #design #mobileMenu {
+    display: none;
+  }
+  #design #design-content {
+    padding: 0em 7.5em;
   }
 }

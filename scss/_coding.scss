@@ -28,9 +28,9 @@
   }
   .tabcontent {
     padding: 0px 10px 15px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     img {
-      width: 65%;
+      width: 100%;
     }
     div {
       padding: 0px 15px 15px;
@@ -44,5 +44,14 @@
     span {
       line-height: 3;
     }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #coding .tabcontent {
+    flex-wrap: nowrap;
+  }
+  #coding .tabcontent img {
+    width: 65%;
   }
 }

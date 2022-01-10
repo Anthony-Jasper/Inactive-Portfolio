@@ -523,7 +523,7 @@ header #game-menu p {
 
 #experience h2 {
   color: #c8cdd0;
-  margin-left: 3em;
+  margin-left: 2.2em;
 }
 
 #experience .role {
@@ -537,6 +537,12 @@ header #game-menu p {
   opacity: 0.5;
   font-size: 49px;
   top: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  #experience .sec-sub {
+    margin-left: 4.2em;
+  }
 }
 
 #cloudyne #cloudyne-wrapper {
@@ -663,7 +669,7 @@ header #game-menu p {
     width: 200px;
     height: 200px;
   }
-  div {
+  #contact div {
     padding-left: 30px;
   }
 }
@@ -702,12 +708,12 @@ header #game-menu p {
 
 #coding .tabcontent {
   padding: 0px 10px 15px;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #coding .tabcontent img {
-  width: 65%;
+  width: 100%;
 }
 
 #coding .tabcontent div {
@@ -725,6 +731,16 @@ header #game-menu p {
   line-height: 3;
 }
 
+@media screen and (min-width: 1440px) {
+  #coding .tabcontent {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  #coding .tabcontent img {
+    width: 65%;
+  }
+}
+
 #design {
   position: fixed;
   display: none;
@@ -735,28 +751,9 @@ header #game-menu p {
   top: 0;
   background-color: #0a0d12;
   overflow-x: hidden;
-  padding: 5px 10px 5px 0px;
+  padding: 5px 0px;
   -webkit-animation: slideLeft 0.5s ease-out 0s forwards;
           animation: slideLeft 0.5s ease-out 0s forwards;
-  /* #back2top {
-    color: white;
-    background: rgba(70, 113, 128, 0.05);
-    position: fixed;
-    border-radius: 50%;
-    bottom: 15px;
-    right: 15px;
-    height: 45px;
-    width: 45px;
-    span {
-      position: absolute;
-      font-size: 26px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      top: 0;
-      bottom: 0;
-    }
-  } */
 }
 
 #design #close-design {
@@ -769,8 +766,8 @@ header #game-menu p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -778,16 +775,43 @@ header #game-menu p {
       align-content: flex-start;
 }
 
-#design #design-sidebar {
-  color: #c8cdd0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 20px 30px;
+#design #mobileMenu {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
   background: rgba(70, 113, 128, 0.05);
+  font-variant: small-caps;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+#design #mobileMenu span {
+  display: block;
+  width: 30px;
+  height: 1px;
+  border: 1px solid #48c6ef;
+  margin: 2px auto;
+}
+
+#design #design-sidebar {
+  position: absolute;
+  color: #c8cdd0;
+  width: 100%;
+  padding: 20px 30px 40px 30px;
+  background: #0d1218;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  z-index: 20;
+  -webkit-transform: translateY(-98%);
+          transform: translateY(-98%);
+}
+
+#design #design-sidebar.openMenu {
+  -webkit-animation: showMenu 0.5s ease-out 0s forwards;
+          animation: showMenu 0.5s ease-out 0s forwards;
 }
 
 #design #design-sidebar ul {
@@ -819,7 +843,7 @@ header #game-menu p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0 8em;
+  padding: 3em 0.5em;
 }
 
 #design #design-content h2 {
@@ -858,6 +882,49 @@ header #game-menu p {
 
 #design .designItem.activeDesign {
   display: block;
+}
+
+@-webkit-keyframes showMenu {
+  from {
+    -webkit-transform: translateY(-98%);
+            transform: translateY(-98%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes showMenu {
+  from {
+    -webkit-transform: translateY(-98%);
+            transform: translateY(-98%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #design #design-wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  #design #design-sidebar {
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  #design #mobileMenu {
+    display: none;
+  }
+  #design #design-content {
+    padding: 0em 7.5em;
+  }
 }
 
 * {
@@ -1015,7 +1082,7 @@ h2 {
     letter-spacing: 6px;
   }
   .sec-sub {
-    margin-left: 5.7em;
+    margin-left: 5.2em;
   }
 }
 /*# sourceMappingURL=main.css.map */
