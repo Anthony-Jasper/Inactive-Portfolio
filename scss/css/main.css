@@ -858,6 +858,14 @@ header #game-menu p {
   font-size: 24px;
 }
 
+#design #design-content h4 {
+  margin-top: 10px;
+  color: #f2f2f2;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
 #design #design-content p {
   margin: 30px 0px;
 }
@@ -878,6 +886,12 @@ header #game-menu p {
 #design #design-content ul li {
   display: inline-block;
   margin-right: 30px;
+}
+
+#design #design-content iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
 }
 
 #design .designItem {
